@@ -1,24 +1,28 @@
-var express = require('express'),
-    http = require('http'),
-    serveStatic = require('serve-static'),
-    bodyParser = require('body-parser'),
-    PORT = 3111;
+(function () {
+    'use strict';
 
-var send404 = function (res) {
-    res.writeHead(404, {'Content-Type': 'text/html'});
-    res.end('<h1>Page not found</h1>');
-};
+    var express = require('express'),
+        http = require('http'),
+        serveStatic = require('serve-static'),
+        bodyParser = require('body-parser'),
+        PORT = 3111;
 
-var app = express();
+    var send404 = function (res) {
+        res.writeHead(404, {'Content-Type': 'text/html'});
+        res.end('<h1>Page not found</h1>');
+    };
 
-app.use(serveStatic(__dirname + '/'));
+    var app = express();
 
-http.createServer(app).listen(PORT);
+    app.use(serveStatic(__dirname + '/'));
 
-app.use(bodyParser.json());
+    http.createServer(app).listen(PORT);
 
-app.get('/', function (req, res) {
-    res.redirect('/mailer.html');
-});
+    app.use(bodyParser.json());
 
-console.log('The server is started on port ' + PORT);
+    app.get('/', function (req, res) {
+        res.redirect('/mailer.html');
+    });
+
+    console.log('The server is started on port ' + PORT);
+})();
