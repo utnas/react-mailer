@@ -1,11 +1,21 @@
 {
-    "name": "application-name",
+    "name": "React-Mailer",
     "version": "0.0.1",
+    "private": true,
+    "author": "Dooley Nsewolo",
+
+    "scripts": {
+        "start": "./server/mailer/mailer.js"
+    },
 
     "dependencies": {
         "react": "latest",
         "serve-static": "latest",
         "body-parser": "latest",
         "express": "latest"
+    },
+
+    "engines": {
+        "node": "0.10.32"
     }
 }
