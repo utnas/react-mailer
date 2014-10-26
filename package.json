@@ -4,6 +4,8 @@
 
     "dependencies": {
         "react": "latest",
+        "serve-static": "latest",
+        "body-parser": "latest",
         "express": "latest"
     }
 }
